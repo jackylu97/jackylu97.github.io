@@ -2,21 +2,74 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Hey There</title>
+    <title>Jacky Lu</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
     <link rel="stylesheet" type="text/css" href="./styles.css"/>
+    <style>
+    </style>
   </head>
-  <body>
-    <div class='container'>
+  <body class="lh-title">
+    <div class="popover absolute"></div>
+    <div class='fl w-70 pl7 pt6 pr3 pb7'>
       <p>
-        Hey there, 
+        Hey there,
       </p>
+      <br />
       <p>
         I'm Jacky, a student at UC Berkeley where I study Electrical Engineering and Computer Science.
-        Next summer, I'll be working as a software engineering intern at Stripe. Currently, Projects Developer @ The Daily Californian.
-        Previously, I've worked at the Berkeley Institute of Data Science and various startups in roles from development, design and deep learning.
       </p>
+      <br />
+      <p>
+        Next summer, I'll be working as a software engineering intern at <a href="https://stripe.com/" data-image="stripe.png" class="popup">Stripe</a>. <br /><br />
+        Currently, Projects Developer at <a data-image="image.jpg" class="popup">The Daily Californian</a> and
+        Web Designer at <a data-image="image.jpg" class="popup">Innovative Design</a>.
+        Previously, I've worked at the <a data-image="image.jpg" class="popup">Berkeley Institute of Data Science</a> and various startups
+        in roles from development, design to deep learning.
+      </p>
+      <br />
+      <p>
+        In my spare time, I like making art and spending quality time with my plant. Huge fan of hip hop, non-brunch food and new experiences.
+        Here's some of my other work.
+      </p>
+      <br />
       <p>Still figuring some things out. Currently accepting new friendships.</p>
-      <p></p>
     </div>
+    <div class="fl w-30 pt6 pr6 tr">
+      <p>[ about ]</p>
+      <p><a href="#">resume</a></p>
+      <p><a href="#">art</a></p>
+      <p><a href="#">work</a></p>
+      <p><a href="#">contact</a></p>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script>
+        var mouse = {x:0,y:0},
+            offset = {x:0, y:0};
+
+        $('.popup').on('mouseenter', function() {
+            var src = $(this).data('image');
+            $(this).css('background-color', '#0074D9');
+            $('.popover').html('<img src="'+src+'">').show();
+            clearTimeout(this.timer);
+        }).on('mouseleave', function() {
+            $(this).css('background-color', 'inherit');
+            this.timer = setTimeout(function() {
+                $('.popover').hide();
+            }, 10);
+        });
+
+        document.addEventListener('mousemove', function(e){
+            mouse.x = e.pageX;
+            mouse.y = e.pageY;
+            $('.popover').css({
+                left: (mouse.x + offset.x) + 'px',
+                top: (mouse.y + offset.y) + 'px'
+            });
+        });
+    </script>
   </body>
 </html>
