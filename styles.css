@@ -1,10 +1,8 @@
 @font-face {
-	font-family: Circular Bold;
-	src: url(https://dl.dropboxusercontent.com/u/2725749/Flock/Fonts/CircularStd-Bold.eot);
-	src: url(https://dl.dropboxusercontent.com/u/2725749/Flock/Fonts/CircularStd-Bold.woff) format("woff"),
-	     url(https://dl.dropboxusercontent.com/u/2725749/Flock/Fonts/CircularStd-Bold.ttf) format("truetype");
+	font-family: Untitled Sans;
+	src: url(./UntitledSansTest-Regular.woff) format("woff");
 	font-style: normal;
-	font-weight: 800
+	font-weight: 400;
 }
 
 /* Global */
@@ -44,7 +42,7 @@ body {
   margin: 0 auto;
 	background: #FAFAFA;
   color: #443C49;
-  font-family: 'Untitled Sans Test', serif;
+  font-family: 'Untitled Sans', serif;
   font-weight: 400;
   font-size: 2.25vw;
 }
