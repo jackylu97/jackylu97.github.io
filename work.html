@@ -1,0 +1,131 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jacky Lu</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+    <style>
+    </style>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script>
+    function show(id) {
+      $(".item").css({"display":"none"});
+      $(id).css({"display":"block"});
+    }
+  </script>
+  <body class="">
+    <div class='w-30 pa4 h-100' style="position:fixed">
+      <p>
+        <a href="./index.html">←</a> Work
+      </p>
+      <div class="f3 pa3">
+        <ul>
+          <li class="mv2">
+            <a onclick="show('#audioviz')">Audio Visualizer</a>
+          </li>
+          <li class="mv2">
+            <a onclick="show('#superb')">ASUC Superb</a>
+          </li>
+          <li class="mv2">
+            <a onclick="show('#bear')">beAR</a>
+          </li>
+          <li class="mv2">
+            <a onclick="show('#composite')">COMPOSITE Magazine</a>
+          </li>
+          <li class="mv2">
+            <a onclick="show('#bart')">The Great Equalizer</a>
+          </li>
+          <li class="mv2">
+            <a onclick="show('#sep')">UC Berkeley SEP</a>
+          </li>
+          <li class="mv2">
+            <a onclick="show('#webvr_audioviz')">WebVR Audio Visualizer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="fl w-30 pa4">
+    </div>
+    <div class="fl w-70 tl pa4 bl" style="min-height:100%">
+      <div id="sep" class="item">
+        <h4 class="pb4">UC Berkeley Sigma Eta Pi (2017)</h4>
+        <p class="f4 pb4">
+          Website built for Sigma Eta Pi, an entrepreneurship fraternity at UC Berkeley. Demo below.
+        </p>
+        <p class="">
+          <video width="100%"  src="./assets/old_sep_site.mov" controls>
+          Your browser does not support the video tag.
+          </video>
+        </p>
+      </div>
+
+      <div id="audioviz" class="item">
+        <h4 class="pb4">Audio Visualizer (2018)</h4>
+        <p class="f4 pb4">
+          ThreeJS audio visualization sketch. Can view either fully rendered or as a mesh and supports three different visualization schemes. A secondary particle visualization scheme is also included. See demo below.
+        </p>
+        <div class="" width=100% style="position:relative;padding-bottom:65%">
+          <iframe id="ytplayer" style="position:absolute;top:0;left:0;" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/2hTL8ntteb8" frameborder="0"></iframe>
+        </div>
+        <p class="f4 pt4">
+          See it live here: <a href="http://jacky.lu/cs184finalproj/blob.html" class="popup">Blob Visualizer</a>
+        </p>
+      </div>
+
+      <div id="webvr_audioviz" class="item">
+        <h4 class="pb4">WebVR Audio Visualizer (2018)</h4>
+        <p class="f4 pb4">
+          Current work in progress. Built in A-Frame. WebVR is currently only supported in Firefox and Chromium.
+        </p>
+        <p class="f4">
+          See it live here: <a href="http://jacky.lu/webvr_audioviz" class="popup">WebVR Visualizer</a>
+        </p>
+      </div>
+
+      <div id="bear" class="item">
+        <h4 class="pb4">beAR (2017)</h4>
+        <p class="f4 pb4">
+          24 hour hackathon project (attempting) to build scalable multiplayer AR. We built an extensible backend library that worked with Apple's ARKit and custom byte stream data to support synchronised AR views. We built our own 3D Pong game, beARPong, as a demo to show off its capabilities. The project ended up winning 3rd Place at Greylock Hackfest. See lo-fi demo below:
+        </p>
+        <p class="pb4">
+          <video width="100%"  src="./assets/bearpong.mp4" controls>
+          Your browser does not support the video tag.
+          </video>
+        </p>
+        <p class="f4">
+          In the video, you can see each player hitting a white pong ball back and forth in AR space. Read more about it here: <a href="https://medium.com/@calbearpong/scaling-ar-in-24-hours-791b7573c644" class="popup">Scaling AR in 24 Hours</a>
+        </p>
+      </div>
+
+      <div id="bart" class="item">
+        <h4 class="pb4">The Great Equalizer (2018)</h4>
+        <p class="f4 pb4">
+          This was an Op-Ed piece done in collaboration with the Editorial Board at the Daily Californian. You can view it <a href="http://projects.dailycal.org/2018/bart/" class="popup">here</a>.
+        </p>
+      </div>
+
+      <div id="superb" class="item">
+        <h4 class="pb4">ASUC Superb Arts and Design (2018-)</h4>
+        <p class="f4 pb4">
+          These are a series of artworks made for ASUC Superb, the recreation board at UC Berkeley. Most are advertisements for free concerts held on campus.
+        </p>
+        <img width=100% src="./assets/keith_ape.png"/>
+        <br />
+        <br />
+        <img width=100% src="./assets/voteside.png"/>
+      </div>
+
+      <div id="composite" class="item">
+        <h4 class="pb4">COMPOSITE Zine Issue #04 (2018)</h4>
+        <p class="f4 pb4">
+          I had the honor of creating the cover for COMPOSITE issue #04. The theme is "Liftoff".
+        </p>
+        <img width=100% src="./assets/composite.png"/>
+      </div>
+
+    </div>
+  </body>
+
+</html>
