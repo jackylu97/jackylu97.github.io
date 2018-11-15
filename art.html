@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jacky Lu</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+    <style>
+    </style>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script>
+    function show(id) {
+      $(".item").css({"display":"none"});
+      $(id).css({"display":"block"});
+    }
+  </script>
+  <body class="">
+    <div class="popover absolute"></div>
+    <div class='w-20 pa4' style="position:fixed">
+      <p class="">
+        <a href="./index.html">←</a> Art
+      </p>
+    </div>
+    <div class="fl w-100 tl ph4 pt3" style="min-height:100%">
+      <div class="container">
+        <div class="flex-item">
+          <div class="pa3">
+            <img class= "popup" data-image="./art/8.jpg" src="./art/8.jpg" />
+          </div>
+          <div class="pa3">
+            <img class= "popup" data-image="./art/4.jpg" src="./art/4.jpg" />
+          </div>
+          <div class="pa3">
+            <img class= "popup" data-image="./art/10.jpg" src="./art/10.jpg" />
+          </div>
+
+        </div>
+        <div class="flex-item">
+          <div class="pa3">
+            <img class= "popup" data-image="./art/2.jpg" src="./art/2.jpg" />
+          </div>
+          <div class="pa3">
+            <img class= "popup" data-image="./art/5.jpg" src="./art/5.jpg" />
+          </div>
+          <div class="pa3">
+            <img class= "popup" data-image="./art/11.jpg" src="./art/11.jpg" />
+          </div>
+        </div>
+        <div class="flex-item">
+          <div class="pa3">
+            <img class= "popup" data-image="./art/3.jpg" src="./art/3.jpg" />
+          </div>
+          <div class="pa3">
+            <img class= "popup" data-image="./art/6.jpg" src="./art/6.jpg" />
+          </div>
+          <div class="pa3">
+            <img class= "popup" data-image="./art/9.jpg" src="./art/9.jpg" />
+          </div>
+        </div>
+        <div class="flex-item">
+          <div class="pa3">
+            <img class= "popup" data-image="./art/1.jpg" src="./art/1.jpg" />
+          </div>
+          <div class="pa3">
+            <img class= "popup" data-image="./art/7.jpg" src="./art/7.jpg" />
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </body>
+  <script>
+    var mouse = {x:0,y:0},
+        offset = {x:0, y:0};
+
+    $('.popup').on('mouseenter', function() {
+        var src = $(this).data('image');
+        $(this).css('background-color', '#0074D9');
+        $('.popover').html('<img style="max-width: 600px;" src="'+src+'">').show();
+        clearTimeout(this.timer);
+    }).on('mouseleave', function() {
+        $(this).css('background-color', 'inherit');
+        this.timer = setTimeout(function() {
+            $('.popover').hide();
+        }, 10);
+    });
+
+    document.addEventListener('mousemove', function(e){
+        mouse.x = e.pageX;
+        mouse.y = e.pageY;
+        $('.popover').css({
+            left: (mouse.x + offset.x) + 'px',
+            top: (mouse.y + offset.y) + 'px'
+        });
+    });
+  </script>
+
+</html>
