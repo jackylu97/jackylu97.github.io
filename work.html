@@ -13,8 +13,11 @@
     function show(id) {
       $(".item").css({"display":"none"});
       $(id).css({"display":"block"});
-      $(".toggle-height").css({"height":"25%"})
-      $("#menu").addClass("bb")
+      if ($(window).width() < 768) {
+        $(".toggle-height").css({"height":"25%"})
+        $("#menu").addClass("bb")
+        $("#nothingtoseehere").css({"height":"25%"})
+      }
     }
   </script>
   <body class="">
@@ -56,7 +59,8 @@
     </div>
     <div class="fl w-30 pa4">
     </div>
-    <div class="fl w-70-ns tl pa4-ns pa3 pt6 bl-ns f4" style="min-height:100%">
+    <div id="nothingtoseehere"></div>
+    <div class="fl w-70-ns tl pa4-ns pa3 pt4 bl-ns f4" style="min-height:100%">
       <!-- <div id="default" class="item" style="display:block;width:100%; height:100%;text-align:center;">
         <br />
         <br />
