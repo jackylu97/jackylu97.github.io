@@ -31,13 +31,19 @@
       <div class="pa3 pt4 dir">
         <ul>
           <li class="mv2">
-            <a onclick="show('#audioviz')">Audio Visualizer</a>
+            <a onclick="show('#neural-garden')">A Neural Garden</a>
+          </li>
+          <li class="mv2">
+            <a onclick="show('#style')">Style Transfer for 360 Video</a>
+          </li>
+          <li class="mv2">
+            <a onclick="show('#bear')">beAR</a>
           </li>
           <li class="mv2">
             <a onclick="show('#superb')">ASUC Superb</a>
           </li>
           <li class="mv2">
-            <a onclick="show('#bear')">beAR</a>
+            <a onclick="show('#audioviz')">Audio Visualizer</a>
           </li>
           <li class="mv2">
             <a onclick="show('#composite')">COMPOSITE Magazine</a>
@@ -46,14 +52,14 @@
             <a onclick="show('#bart')">The Great Equalizer</a>
           </li>
           <li class="mv2">
+            <a onclick="show('#art')">Traditional Artwork</a>
+          </li>
+          <!-- <li class="mv2">
             <a onclick="show('#sep')">UC Berkeley SEP</a>
-          </li>
-          <li class="mv2">
-            <a onclick="show('#webvr_audioviz')">WebVR Audio Visualizer</a>
-          </li>
-          <li class="mv2">
-            <a onclick="show('#style')">Style Transfer for 360 Video</a>
-          </li>
+          </li> -->
+          <!-- <li class="mv2">
+            <a onclick="show('#webvr_audioviz')">WebVR Audio Visualizer (2018)</a>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -69,7 +75,7 @@
           </p>
       </div> -->
 
-      <div id="sep" class="item">
+      <!-- <div id="sep" class="item">
         <h4 class="pb4">UC Berkeley Sigma Eta Pi (2017)</h4>
         <p class="f4 pb4">
           Website built for Sigma Eta Pi, an entrepreneurship fraternity at UC Berkeley. Demo below.
@@ -79,7 +85,7 @@
           Your browser does not support the video tag.
           </video>
         </p>
-      </div>
+      </div> -->
 
       <div id="audioviz" class="item">
         <h4 class="pb4">Audio Visualizer (2018)</h4>
@@ -127,7 +133,7 @@
       </div>
 
       <div id="superb" class="item">
-        <h4 class="pb4">ASUC Superb Arts and Design (2018-)</h4>
+        <h4 class="pb4">ASUC Superb Arts and Design (2018-2019)</h4>
         <p class="f4 pb4">
           These are a series of artworks made for ASUC Superb, the recreation board at UC Berkeley. Most are advertisements for free concerts held on campus.
         </p>
@@ -158,7 +164,110 @@
         </p>
       </div>
 
+      <div id="neural-garden" class="item">
+        <h4 class="pb4">A Neural Garden (2020)</h4>
+        <p class="f4 pb4">
+          A neural garden is gallery of artworks generated entirely by a collective of artistic AI, 
+          focused around expressing their interpretation of our natural world. This artwork explores structural 
+          representations of visual language within artificial networks.
+          <br/>
+          <br/>
+          Originally shown as part of Gray Area's artist showcase. Video component of the installation shown below.
+        </p>
+        <div class="" width=100% style="position:relative;padding-bottom:65%">
+          <iframe id="ytplayer" style="position:absolute;top:0;left:0;" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/5KPW6i2tlIQ" frameborder="0"></iframe>
+        </div>
+      </div>
+
+      <div id="art" class="item">
+        <div class="popover absolute"></div>
+        <div class="fl w-100 tl" style="min-height:100%">
+          <div class="container">
+            <div class="column flex-item">
+              <div class="pa2-ns">
+                <img class= "popup" data-image="./art/8.jpg" src="./art/8.jpg" />
+              </div>
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/4.JPG" src="./art/4.JPG" />
+              </div>
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/10.jpg" src="./art/10.jpg" />
+              </div>
+
+            </div>
+            <div class="column flex-item">
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/2.jpg" src="./art/2.jpg" />
+              </div>
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/5.JPG" src="./art/5.JPG" />
+              </div>
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/11.JPG" src="./art/11.JPG" />
+              </div>
+            </div>
+            <div class="column flex-item">
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/3.jpg" src="./art/3.jpg" />
+              </div>
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/6.jpg" src="./art/6.jpg" />
+              </div>
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/9.jpg" src="./art/9.jpg" />
+              </div>
+            </div>
+            <div class="column flex-item">
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/1.jpg" src="./art/1.jpg" />
+              </div>
+              <div class="pa3-ns">
+                <img class= "popup" data-image="./art/7.jpg" src="./art/7.jpg" />
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </body>
+  <script>
+    $("img").addClass("pa1");
+    var mouse = {x:0,y:0},
+        offset = {x:0, y:0};
 
+    
+    if ($(window).width() > 768) {
+      document.addEventListener('mousemove', function(e){
+        mouse.x = e.pageX;
+        mouse.y = e.pageY;
+        $('.popover').css({
+            left: (mouse.x + offset.x) + 'px',
+            top: (mouse.y + offset.y) + 'px'
+        });
+      });
+
+      $('.popup').on('mouseenter', function() {
+        var src = $(this).data('image');
+        $(this).css('background-color', '#0074D9');
+        $('.popover').html('<img src="'+src+'">').show();
+        clearTimeout(this.timer);
+      }).on('mouseleave', function() {
+        $(this).css('background-color', 'inherit');
+        this.timer = setTimeout(function() {
+            $('.popover').hide();
+        }, 10);
+      });
+    } else {
+      $('.popup').on('click', function() {
+        var src = $(this).data('image');
+        $('.popover').html('<img src="'+src+'">').show();
+      });
+      $('.column').removeClass("flex-item");
+      $('.column > div').addClass("pa3")
+    }
+    
+  </script>
 </html>
